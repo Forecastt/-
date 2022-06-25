@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+
+const int SIZE = 20;
+var nums = Enumerable.Range(1, SIZE).ToList();
+int[] result = new int[SIZE];
+Random rand = new Random();
+for (int i = 0; i < SIZE; i++)
+{
+    int pos = rand.Next(0, nums.Count);
+    result[i] = nums[pos];
+    nums.RemoveAt(pos);
+}
+foreach (var i in result)
+{
+    Console.Write(" " + i);
+}

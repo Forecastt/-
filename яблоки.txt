@@ -1,0 +1,25 @@
+using System;
+Console.WriteLine("Количество яблок?");
+int apple = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Количество человек?");
+int people = Convert.ToInt32(Console.ReadLine());
+int temp = people - 1;
+int[] kk = new int[people + 1];
+kk[0] = apple;
+for (int i = 0; i < people; i++)
+{
+
+    for (int j = 0; j < people; j++)
+    {
+        if (j != i)
+        {
+            kk[j] = kk[j] + kk[i] / temp;
+        }
+    }
+    kk[i] = kk[i] % temp;
+}
+Console.WriteLine("Сколько яблок стало у людей? ");
+for (int i = 0; i < people; i++)
+{
+    Console.WriteLine(kk[i]);
+}
